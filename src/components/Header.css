@@ -1,0 +1,25 @@
+header {
+  padding: 1rem;
+  color: var(--blue12);
+}
+
+.header--inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header--user {
+  background-color: var(--blue6);
+  border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.header--line {
+  background-color: blue;
+  height: 2px;
+  width: 50%;
+  background: linear-gradient(45deg, var(--blue9), var(--pink9));
+  background-size: 100%;
+}
