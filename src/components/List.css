@@ -57,6 +57,9 @@
   width: 8rem;
   padding: 0rem 1rem;
   transition: 0.25s;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  margin: -2px;
 }
 
 .list--formSubmit:hover {

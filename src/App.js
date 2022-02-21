@@ -46,21 +46,53 @@ const fakeData = {
 
 function App() {
   const [lists, setLists] = React.useState(fakeData);
-  const [scene, setScene] = React.useState("list");
+  const [scene, setScene] = React.useState("lists");
   const [currentList, setCurrentList] = React.useState("Groceries");
 
   function genId() {
-    return Math.floor(Math.random() * 99999999999999);
+    return Math.floor(Math.random() * 9999999999999);
   }
 
   function addListItem(value) {
     setLists((oldLists) => {
-      let newList = { ...lists };
-      newList.currentList.push({
+      let newLists = { ...oldLists };
+      newLists[currentList].push({
         id: genId(),
         name: value,
       });
-      return newList;
+      return newLists;
+    });
+  }
+
+  function removeListItem(id) {
+    setLists((oldLists) => {
+      let newLists = { ...oldLists };
+      for (let i = 0; i < newLists[currentList].length; i++) {
+        const listItem = newLists[currentList][i];
+        if (listItem.id === id) {
+          newLists[currentList].splice(i, 1);
+        }
+      }
+
+      return newLists;
+    });
+  }
+
+  function addList(value) {
+    setLists((oldLists) => {
+      let newLists = { ...oldLists };
+      newLists[value] = [];
+
+      return newLists;
+    });
+  }
+
+  function removeList(value) {
+    setLists((oldLists) => {
+      let newLists = { ...oldLists };
+      delete newLists[value];
+
+      return newLists;
     });
   }
 
@@ -73,6 +105,7 @@ function App() {
           currentList={currentList}
           setScene={setScene}
           addListItem={addListItem}
+          removeListItem={removeListItem}
         />
       )}
 
@@ -81,6 +114,8 @@ function App() {
           lists={lists}
           setCurrentList={setCurrentList}
           setScene={setScene}
+          addList={addList}
+          removeList={removeList}
         />
       )}
     </div>

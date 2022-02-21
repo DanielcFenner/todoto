@@ -11,24 +11,56 @@
   gap: 1rem;
 }
 
-.lists--item {
+.lists--itemContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--blue3);
-  padding: 1rem;
   border-radius: 0.5rem;
   line-height: 1;
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
+  padding-left: 1rem;
 }
 
-.lists--item i {
-  font-size: 1.5rem;
+.lists--itemContainer i {
+  color: var(--blue7);
+  font-size: 1rem;
+  padding: 1rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
-.lists--item:hover {
+.lists--itemContainer i:hover {
+  background-color: var(--blue5);
+  color: var(--blue11);
+}
+
+.lists--itemContainer:hover {
   background-color: var(--blue4);
+}
+
+.lists--titleContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.lists--addList {
+  color: var(--blue1);
+  border: none;
+  background: linear-gradient(45deg, var(--blue9), var(--pink9));
+  background-size: 300%;
+  background-position: 80%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.25s all;
+  padding: 0rem 1rem;
+}
+
+.lists--addList:hover {
+  background-size: 125%;
+  background-position: 20%;
 }
