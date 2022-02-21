@@ -32,6 +32,7 @@ export default function List({
   function handleAddListItem(e) {
     e.preventDefault();
     addListItem(formValue);
+    setFormValue("");
   }
 
   return (

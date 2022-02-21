@@ -6,7 +6,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className="appwrapper">
+      <App />
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );

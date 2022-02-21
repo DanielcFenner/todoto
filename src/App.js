@@ -45,9 +45,19 @@ const fakeData = {
 };
 
 function App() {
-  const [lists, setLists] = React.useState(fakeData);
+  const [lists, setLists] = React.useState(defaultValue());
   const [scene, setScene] = React.useState("lists");
   const [currentList, setCurrentList] = React.useState("Groceries");
+
+  React.useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(lists));
+  }, [lists]);
+
+  function defaultValue() {
+    const saved = localStorage.getItem("lists");
+    const initialValue = JSON.parse(saved);
+    return initialValue || fakeData;
+  }
 
   function genId() {
     return Math.floor(Math.random() * 9999999999999);

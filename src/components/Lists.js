@@ -41,6 +41,7 @@ export default function Lists({
   function handleAddList(e) {
     e.preventDefault();
     addList(formValue);
+    setFormValue("");
   }
 
   function handleRemoveList(e) {
