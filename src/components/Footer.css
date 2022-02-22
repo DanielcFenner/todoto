@@ -1,0 +1,17 @@
+footer {
+  background-color: var(--blue3);
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--blue12);
+  width: 100%;
+  text-align: center;
+}
+
+footer a:hover {
+  background-color: var(--blue4);
+}

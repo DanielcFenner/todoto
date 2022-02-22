@@ -23,7 +23,7 @@ export default function Lists({
   }
 
   const listsElement = [];
-  for (let list in lists) {
+  for (let [list, listItems] of Object.entries(lists)) {
     listsElement.push(
       <div
         key={list}
@@ -32,6 +32,7 @@ export default function Lists({
       >
         <div className="lists--item">
           <p>{list}</p>
+          <div className="lists--amount">{listItems.length} items</div>
         </div>
         <i className="bi bi-trash3" id={list} onClick={handleRemoveList}></i>
       </div>
@@ -40,8 +41,25 @@ export default function Lists({
 
   function handleAddList(e) {
     e.preventDefault();
-    addList(formValue);
+    if (
+      formValue.length === 0 ||
+      formValue.length > 30 ||
+      listExistBool(formValue)
+    ) {
+      return;
+    }
+    addList(formValue.toUpperCase());
     setFormValue("");
+  }
+
+  function listExistBool(value) {
+    let bool = false;
+    for (let list in lists) {
+      if (value.toUpperCase() === list.toUpperCase()) {
+        bool = true;
+      }
+    }
+    return bool;
   }
 
   function handleRemoveList(e) {

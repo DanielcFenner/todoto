@@ -73,24 +73,37 @@
 }
 
 .list--item {
-  padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: var(--blue2);
+  background-color: var(--blue3);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
 
+.list--item p {
+  text-indent: 1rem;
+}
+
 .list--item:hover {
-  background-color: var(--blue3);
+  background-color: var(--blue4);
 }
 
 .list--itemTick {
-  border-color: var(--blue9);
-  border-width: 2px;
-  border-style: solid;
   width: 1rem;
   height: 1rem;
-  border-radius: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--blue4);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--blue11);
+}
+
+.list--itemTick:hover {
+  background-color: var(--blue5);
 }

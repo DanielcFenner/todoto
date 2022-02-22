@@ -14,11 +14,13 @@ export default function List({
   const renderList = list.map((listItem) => {
     return (
       <div key={listItem.id} className="list--item">
+        <p>{listItem.name}</p>
         <div
           className="list--itemTick"
           onClick={() => removeListItem(listItem.id)}
-        ></div>
-        <p>{listItem.name}</p>
+        >
+          <i className="bi bi-check"></i>
+        </div>
       </div>
     );
   });
@@ -31,6 +33,9 @@ export default function List({
 
   function handleAddListItem(e) {
     e.preventDefault();
+    if (formValue.length === 0 || formValue.length > 30) {
+      return;
+    }
     addListItem(formValue);
     setFormValue("");
   }
