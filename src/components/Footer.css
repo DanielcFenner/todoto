@@ -1,7 +1,8 @@
 footer {
-  background-color: var(--blue3);
   display: flex;
   justify-content: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 footer a {
@@ -10,6 +11,8 @@ footer a {
   color: var(--blue12);
   width: 100%;
   text-align: center;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 footer a:hover {
