@@ -84,7 +84,7 @@ export default function Lists({
       {Object.keys(lists).length ? (
         <div className="lists-containerContainer">{listsElement} </div>
       ) : (
-        "You don't have any lists yet, go ahead and add one"
+        "You don't have any lists yet, add one to get started!"
       )}
     </main>
   );

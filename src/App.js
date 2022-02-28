@@ -4,47 +4,6 @@ import List from "./components/List";
 import Lists from "./components/Lists";
 import Footer from "./components/Footer";
 
-const fakeData = {
-  Groceries: [
-    {
-      id: 12421239123,
-      name: "Broccoli",
-    },
-    {
-      id: 12345239123,
-      name: "Blueberries",
-    },
-    {
-      id: 12399939123,
-      name: "Bananas",
-    },
-  ],
-  Chores: [
-    {
-      id: 12391200123,
-      name: "Dishes",
-    },
-    {
-      id: 12392239123,
-      name: "Laundry",
-    },
-  ],
-  Games: [
-    {
-      id: 12392139123,
-      name: "Lost Ark",
-    },
-    {
-      id: 12391293123,
-      name: "Overwatch",
-    },
-    {
-      id: 12391261123,
-      name: "Valorant",
-    },
-  ],
-};
-
 function App() {
   const [lists, setLists] = React.useState(defaultValue());
   const [scene, setScene] = React.useState("lists");
@@ -57,7 +16,7 @@ function App() {
   function defaultValue() {
     const saved = localStorage.getItem("lists");
     const initialValue = JSON.parse(saved);
-    return initialValue || fakeData;
+    return initialValue || {};
   }
 
   function genId() {
